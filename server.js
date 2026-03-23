@@ -12,3 +12,7 @@ app.listen(port, () => {
   console.log(`Server listening at http://localhost:${port}`);
 });
 
+app.get('/registrar', (req, res) => {
+  res.sendFile(__dirname + '/public/pages/registrar.html');
+});
+

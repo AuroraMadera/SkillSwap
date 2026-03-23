@@ -1,0 +1,137 @@
+:root {
+    --blue-primary: #2563EB;
+    --blue-hover: #1E3A8A;
+    --purple-bg: #7C3AED;
+    --light-bg: #F3E8FF;
+    --white: #FFFFFF;
+    --grey-text: #6B7280;
+    --input-border: #E5E7EB;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* El fondo radial que pediste */
+    background-image: radial-gradient(60% 120% at 0% 0%, var(--blue-primary) 0%, var(--purple-bg) 60%, var(--light-bg) 100%);
+}
+
+.container {
+    width: 90%;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.register-card {
+    background-color: var(--white);
+    padding: 40px;
+    border-radius: 24px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.main-title {
+    text-align: center;
+    color: #111827;
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.section-label {
+    color: #9CA3AF;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+/* Layout con Grid para que no se vea amontonado */
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-bottom: 15px; }
+.grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin-bottom: 15px; }
+
+.input-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #1F2937;
+    font-size: 0.9rem;
+}
+
+.input-group input, .input-group select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--input-border);
+    border-radius: 8px;
+    background-color: #F9FAFB;
+    font-size: 0.9rem;
+}
+
+.input-with-icon {
+    position: relative;
+}
+
+.input-with-icon i {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--grey-text);
+}
+
+.input-with-icon input {
+    padding-left: 35px;
+}
+
+.helper-text {
+    font-size: 0.75rem;
+    color: var(--grey-text);
+    display: block;
+    margin-top: 5px;
+}
+
+/* Botón Crear Cuenta (Dentro del cuadro blanco con separación) */
+.create-btn {
+    width: 100%;
+    padding: 14px;
+    background-color: var(--blue-primary);
+    color: white;
+    border: none;
+    border-radius: 50px; /* Estilo píldora como en tu imagen */
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 25px;
+    transition: background 0.3s;
+}
+
+.create-btn:hover {
+    background-color: var(--blue-hover);
+}
+
+/* Botón Regresar (Fuera del cuadro) */
+.back-btn {
+    align-self: flex-start;
+    background-color: var(--white);
+    color: var(--grey-text);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s;
+}
+
+.back-btn:hover {
+    background-color: var(--blue-hover);
+    color: var(--white);
+}
+
+/* Responsivo básico */
+@media (max-width: 600px) {
+    .grid-3, .grid-2 { grid-template-columns: 1fr; }
+}
