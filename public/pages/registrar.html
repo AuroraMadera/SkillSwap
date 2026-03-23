@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Skillswap - Crear Cuenta</title>
-    <link rel="stylesheet" href="styles/registrar.css">
+    <title>Skillswap - Registro</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles/registrar.css">
 </head>
 <body>
     <div class="container">
@@ -60,24 +60,27 @@
                         <label>Disponibilidad</label>
                         <select>
                             <option>Selecciona tu horario</option>
+                            <option>Matutino</option>
+                            <option>Vespertino</option>
                         </select>
                     </div>
-                    <div class="input-group">
-                        <label>Contraseña</label>
-                        <div class="input-with-icon">
-                            <i class="fa-solid fa-lock"></i>
-                            <input type="password" placeholder="Ingresa tu nueva contraseña">
-                        </div>
-                        <span class="helper-text">Crea tu contraseña (min. 8 dígitos, números, mayúscula, carácter especial).</span>
-                    </div>
-                </div>
 
-                <div class="grid-2">
-                    <div class="input-group">
-                        <label>Confirmar Contraseña</label>
-                        <div class="input-with-icon">
-                            <i class="fa-solid fa-lock"></i>
-                            <input type="password" placeholder="Confirma tu contraseña">
+                    <div class="security-stack">
+                        <div class="input-group">
+                            <label>Contraseña</label>
+                            <div class="input-with-icon">
+                                <i class="fa-solid fa-lock"></i>
+                                <input type="password" placeholder="Ingresa tu nueva contraseña">
+                            </div>
+                            <span class="helper-text">Mín. 8 dígitos, números, mayúscula y carácter especial.</span>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label>Confirmar Contraseña</label>
+                            <div class="input-with-icon">
+                                <i class="fa-solid fa-lock"></i>
+                                <input type="password" placeholder="Confirma tu contraseña">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -87,7 +90,9 @@
         </main>
 
         <button class="back-btn">
-            <a class="fa-solid fa-arrow-left" href="index.html"> Regresar al menú principal </a>
+            <a href="index.html">
+                <i class="fa-solid fa-arrow-left"></i> Regresar al menú principal
+            </a>
         </button>
     </div>
 </body>

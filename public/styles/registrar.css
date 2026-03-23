@@ -6,103 +6,109 @@
     --white: #FFFFFF;
     --grey-text: #6B7280;
     --input-border: #E5E7EB;
+    --bg-inputs: #F9FAFB;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', sans-serif;
     margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    /* El fondo radial que pediste */
+    /* Fondo radial exacto que asoma el rosa/lavanda */
     background-image: radial-gradient(60% 120% at 0% 0%, var(--blue-primary) 0%, var(--purple-bg) 60%, var(--light-bg) 100%);
+    padding: 20px;
 }
 
 .container {
-    width: 90%;
-    max-width: 900px;
+    width: 100%;
+    max-width: 950px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 25px; /* Espacio entre tarjeta y botón de regreso */
 }
 
 .register-card {
     background-color: var(--white);
-    padding: 40px;
+    padding: 50px 60px;
     border-radius: 24px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
 }
 
 .main-title {
     text-align: center;
     color: #111827;
-    font-size: 2rem;
-    margin-bottom: 30px;
+    font-size: 2.2rem;
+    margin: 0 0 35px 0;
 }
 
 .section-label {
     color: #9CA3AF;
-    font-size: 0.9rem;
-    margin-bottom: 15px;
+    font-size: 0.95rem;
+    margin-bottom: 25px;
 }
 
-/* Layout con Grid para que no se vea amontonado */
-.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-bottom: 15px; }
-.grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin-bottom: 15px; }
+/* Grillas para orden y separación */
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 20px; }
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-bottom: 20px; }
+
+/* Bloque para apilar contraseñas verticalmente */
+.security-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
 
 .input-group label {
     display: block;
     font-weight: 600;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
     color: #1F2937;
     font-size: 0.9rem;
 }
 
 .input-group input, .input-group select {
     width: 100%;
-    padding: 10px 12px;
+    padding: 12px 15px;
     border: 1px solid var(--input-border);
-    border-radius: 8px;
-    background-color: #F9FAFB;
-    font-size: 0.9rem;
+    border-radius: 10px;
+    background-color: var(--bg-inputs);
+    font-size: 0.95rem;
+    box-sizing: border-box;
+    color: #374151;
 }
 
-.input-with-icon {
-    position: relative;
-}
-
+.input-with-icon { position: relative; }
 .input-with-icon i {
     position: absolute;
-    left: 10px;
+    left: 12px;
     top: 50%;
     transform: translateY(-50%);
     color: var(--grey-text);
 }
-
-.input-with-icon input {
-    padding-left: 35px;
-}
+.input-with-icon input { padding-left: 40px; }
 
 .helper-text {
     font-size: 0.75rem;
     color: var(--grey-text);
     display: block;
-    margin-top: 5px;
+    margin-top: 6px;
+    line-height: 1.3;
 }
 
-/* Botón Crear Cuenta (Dentro del cuadro blanco con separación) */
+/* Botón Crear Cuenta */
 .create-btn {
     width: 100%;
-    padding: 14px;
+    padding: 16px;
     background-color: var(--blue-primary);
     color: white;
     border: none;
-    border-radius: 50px; /* Estilo píldora como en tu imagen */
-    font-size: 1rem;
+    border-radius: 50px;
+    font-size: 1.1rem;
     font-weight: bold;
     cursor: pointer;
-    margin-top: 25px;
+    margin-top: 35px;
     transition: background 0.3s;
 }
 
@@ -110,28 +116,37 @@ body {
     background-color: var(--blue-hover);
 }
 
-/* Botón Regresar (Fuera del cuadro) */
+/* Botón Regresar Fuera del Cuadro */
 .back-btn {
     align-self: flex-start;
     background-color: var(--white);
-    color: var(--grey-text);
     border: none;
-    padding: 10px 20px;
+    padding: 0;
     border-radius: 50px;
     cursor: pointer;
-    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.back-btn a {
     display: flex;
     align-items: center;
-    gap: 8px;
-    transition: all 0.3s;
+    gap: 10px;
+    padding: 12px 25px;
+    color: var(--grey-text);
+    text-decoration: none;
+    font-weight: 500;
 }
 
 .back-btn:hover {
     background-color: var(--blue-hover);
+}
+
+.back-btn:hover a {
     color: var(--white);
 }
 
-/* Responsivo básico */
-@media (max-width: 600px) {
+/* Responsivo para tablets/celulares */
+@media (max-width: 768px) {
     .grid-3, .grid-2 { grid-template-columns: 1fr; }
+    .register-card { padding: 30px 20px; }
 }
